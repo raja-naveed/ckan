@@ -5,7 +5,10 @@ import os
 import cgi
 import datetime
 import logging
-import magic
+try:
+    import magic
+except (ImportError, OSError):
+    magic = None
 import mimetypes
 from typing import Any, IO, Optional, Union
 from urllib.parse import urlparse

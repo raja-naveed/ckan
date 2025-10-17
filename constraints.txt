@@ -1,0 +1,6 @@
+# Skip old versions, use newer compatible ones
+psycopg2-binary
+lxml>=6.0
+greenlet>=3.2
+
+

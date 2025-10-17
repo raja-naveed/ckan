@@ -156,6 +156,6 @@ def load_core(declaration: "Declaration"):
     """Load core declarations.
     """
     source = pathlib.Path(__file__).parent / ".." / "config_declaration.yaml"
-    with source.open("r") as stream:
+    with source.open("r", encoding="utf-8") as stream:
         data = yaml.safe_load(stream)
         load_dict(declaration, data)
