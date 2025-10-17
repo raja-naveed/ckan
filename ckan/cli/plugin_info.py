@@ -72,12 +72,16 @@ def _function_info(functions: dict[str, Callable[..., Any]]):
     output = []
     for function_name in functions:
         fn = functions[function_name]
-        args_info = inspect.getargspec(fn)
+        try:
+            args_info = inspect.getargspec(fn)
+        except AttributeError:
+            # Python 3.11+ compatibility
+            args_info = inspect.getfullargspec(fn)
         params = args_info.args
         num_params = len(params)
         if args_info.varargs:
             params.append(u'*' + args_info.varargs)
-        if args_info.keywords:
+        if hasattr(args_info, 'keywords') and args_info.keywords:
             params.append(u'**' + args_info.keywords)
         if args_info.defaults:
             offset = num_params - len(args_info.defaults)

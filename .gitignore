@@ -1,54 +1,170 @@
-syntax: glob
-# generic
-*.pyc
+# Python
+*.py[cod]
+*$py.class
+*.so
+.Python
+__pycache__/
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Virtual Environment
+venv/
+venv311/
+env/
+ENV/
+*.venv
+
+# CKAN specific
+*.db
+*.sqlite
+ckan.ini
+production.ini
+who.ini
+*.log
+
+# Solr data
+solr/
+
+# Storage and uploads
+ckan/files/
+storage/
+uploads/
+
+# Configuration files with sensitive data
+development.ini
+*.secret
+
+# IDE
+.vscode/
+.idea/
 *.swp
 *.swo
-.DS_Store
-ckan.egg-info/*
-sandbox/*
-dist
-.mypy_cache
-.eggs/*
-
-# pylons
-development.ini*
-sstore/*
-data/*
-pylons_data/*
-#ckan/i18n/*/*/*.mo
-
-# other
-pip-requirements-local.txt
-migrate/*
-build/*
-tmp/*
-solr_runtime/*
-fl_notes.txt
-*.ini
-!ckan/migration/alembic.ini
-.noseids
 *~
-.idea
-.vscode
+.DS_Store
 
-# custom style
-ckan/public/base/less/custom.less
+# Byte-compiled / optimized / DLL files
+*.pyo
+*.pyd
 
-# nosetest coverage output
+# Distribution / packaging
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Testing
+.tox/
 .coverage
-htmlcov/*
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
 
-# CKAN
-ckan.log
-ckan_deb/DEBIAN/control
-ckan_deb/DEBIAN/prerm
+# Translations
+*.mo
+*.pot
 
-# node.js
+# Flask stuff
+instance/
+.webassets-cache
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# CKAN session data
+data/
+beaker_cache/
+
+# Node modules (if any frontend build tools)
 node_modules/
+npm-debug.log
+yarn-error.log
 
-# docker
-contrib/docker/.env
-cypress.env.json
+# OS generated files
+Thumbs.db
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Desktop.ini
 
-# cypress
-cypress/videos
+# Backup files
+*.bak
+*.backup
+*~
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# CKAN webassets
+ckan/public/base/css/
+ckan/public/base/javascript/
+
+# Local SQLite databases
+*.sqlite3
+*.db
+
+# Solr cores (if stored locally)
+solr-*
+
+# Redis dump
+dump.rdb
+
+# Windows executables
+*.exe
+*.dll
+
+# Compiled translations
+*.mo
+
+# Git
+.git/
+
+# Keep important files
+!ckanext-custom-theme/
+!ckan/templates/
+!ckan/public/
+!README.md
+!requirements.txt
+!setup.py
